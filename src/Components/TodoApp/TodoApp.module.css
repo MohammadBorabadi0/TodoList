@@ -1,0 +1,16 @@
+.todoApp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo {
+  background-color: #fff;
+  width: 40%;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
