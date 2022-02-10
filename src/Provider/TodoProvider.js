@@ -1,11 +1,14 @@
-import React, { createContext, useContext, useReducer, useState } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 
 // Create Context
 const TodoContext = createContext();
 const TodoContextDispathcer = createContext();
 
 const initialState = {
-  todos: [],
+  todos: [
+    { id: 1, name: "React js", isComplete: false },
+    { id: 2, name: "Node js", isComplete: false },
+  ],
   counter: 0,
 };
 

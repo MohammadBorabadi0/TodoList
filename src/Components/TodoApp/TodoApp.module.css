@@ -1,16 +1,22 @@
 .todoApp {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  flex-direction: column;
+  width: 50%;
 }
 
 .todo {
   background-color: #fff;
-  width: 40%;
-  min-height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 40vh;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: -2px -2px 5px #444, 4px 4px 10px #444;
 }
 
+@media (max-width: 768px) {
+  .todo {
+    width: 90%;
+  }
+}
