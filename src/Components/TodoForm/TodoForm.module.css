@@ -32,9 +32,9 @@
   outline: none;
   background: linear-gradient(45deg, #8830db, #4b088a);
   color: #fff;
-  padding: 0.8rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   border-radius: 0.5rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
   transition: all 0.3s linear;
   cursor: pointer;
 }
