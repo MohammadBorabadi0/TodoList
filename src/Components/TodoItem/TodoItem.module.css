@@ -1,0 +1,32 @@
+.todoItem {
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.7);
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todoItem .btnTrash {
+  padding: 0.2rem 0.4rem;
+  color: rgb(212, 14, 14);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  margin-left: 0.5rem;
+}
+
+.btnEdit {
+  padding: 0.2rem 0.4rem;
+  color: #6b21a8;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.todoItem h3 {
+  font-size: 1.8rem;
+}
