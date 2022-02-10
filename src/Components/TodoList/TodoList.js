@@ -2,7 +2,7 @@ import React from "react";
 
 // Context
 import { useTodo } from "../../Provider/TodoProvider";
-import TodoItem from "../TodoItem";
+import TodoItem from "../TodoItem/TodoItem";
 
 // Css
 import styles from "./TodoList.module.css";

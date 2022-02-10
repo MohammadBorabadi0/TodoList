@@ -5,18 +5,27 @@ const TodoContext = createContext();
 const TodoContextDispathcer = createContext();
 
 const initialState = {
-  todos: [
-    { id: 1, name: "React js", isComplete: false },
-    { id: 2, name: "Node js", isComplete: false },
-  ],
+  todos: [],
   counter: 0,
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    //   case "ADD_TODO":{
-
-    //   }
+    case "ADD_TODO": {
+      const count = state.counter + 1;
+      const newTodo = { id: count, name: action.name, isComplete: false };
+      return {
+        counter: count,
+        todos: [...state.todos, newTodo],
+      };
+    }
+    case "REMOVE_TODO": {
+      const filteredTodos = state.todos.filter((i) => i.id !== action.id);
+      return {
+        counter: state.counter,
+        todos: filteredTodos,
+      };
+    }
     default: {
       return state;
     }
