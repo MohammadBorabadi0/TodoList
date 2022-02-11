@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 // Icons
 import { FaTrash, FaEdit } from "react-icons/fa";
+
+// Context
 import { useTodoActions } from "../../Provider/TodoProvider";
 
 // Css
@@ -24,15 +26,23 @@ const TodoItem = ({ item }) => {
     setOnEdit(true);
   };
 
-  const submitHandler = (e, id) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    dispatch({ type: "EDIT", name: newInput, id: item.id });
+    if (newInput) {
+      dispatch({ type: "EDIT", name: newInput, id: item.id });
+    } else {
+      setNewInput(item.name);
+    }
     setOnEdit(false);
+  };
+
+  const setCompleted = () => {
+    dispatch({ type: "SET_ISCOMPLETE", id: item.id });
   };
 
   if (onEdit) {
     return (
-      <div className={styles.todoItem}>
+      <section>
         <form onSubmit={submitHandler}>
           <input type="text" value={newInput} onChange={changeHandler} />
           <div className={styles.buttons}>
@@ -41,13 +51,13 @@ const TodoItem = ({ item }) => {
             </button>
           </div>
         </form>
-      </div>
+      </section>
     );
   }
 
   return (
-    <div className={styles.todoItem}>
-      <h3>{item.name}</h3>
+    <section className={item.isComplete ? styles.complete : null}>
+      <h3 onClick={setCompleted}>{item.name}</h3>
       <div className={styles.buttons}>
         <button onClick={editHandler} className={styles.btnEdit}>
           <FaEdit size="16px" />
@@ -59,7 +69,7 @@ const TodoItem = ({ item }) => {
           <FaTrash size="16px" />
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

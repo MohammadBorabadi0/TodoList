@@ -36,6 +36,16 @@ const reducer = (state, action) => {
         todos: updatedTodos,
       };
     }
+    case "SET_ISCOMPLETE": {
+      const updatedTodos = [...state.todos];
+      const index = updatedTodos.findIndex((i) => i.id === action.id);
+      const udpatedItem = updatedTodos[index];
+      udpatedItem.isComplete = !udpatedItem.isComplete;
+      return {
+        counter: state.counter,
+        todos: updatedTodos,
+      };
+    }
     default: {
       return state;
     }
@@ -44,6 +54,7 @@ const reducer = (state, action) => {
 
 const TodoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <TodoContext.Provider value={state}>
       <TodoContextDispathcer.Provider value={dispatch}>

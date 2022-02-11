@@ -1,3 +1,16 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+header h2 {
+  font-size: 3rem;
+  color: #222;
+}
+
 .todoApp {
   min-height: 100vh;
   display: flex;
@@ -10,7 +23,7 @@
 .todo {
   background-color: #fff;
   min-height: 60vh;
-  padding: 3rem;
+  padding: 1rem 4rem 6rem 4rem;
   border-radius: 1rem;
   box-shadow: -2px -2px 5px #444, 4px 4px 10px #444;
 }
