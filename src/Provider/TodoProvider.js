@@ -1,5 +1,8 @@
 import React, { createContext, useContext, useReducer } from "react";
 
+// Helper
+import { getCurrentDate, getCurrentTime } from "../Components/helper/Date";
+
 // Create Context
 const TodoContext = createContext();
 const TodoContextDispathcer = createContext();
@@ -13,7 +16,13 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TODO": {
       const count = state.counter + 1;
-      const newTodo = { id: count, name: action.name, isComplete: false };
+      const newTodo = {
+        id: count,
+        name: action.name,
+        time: getCurrentTime(),
+        date: getCurrentDate(),
+        isComplete: false,
+      };
       return {
         counter: count,
         todos: [...state.todos, newTodo],
@@ -31,6 +40,8 @@ const reducer = (state, action) => {
       const index = updatedTodos.findIndex((i) => i.id === action.id);
       const updatedItem = updatedTodos[index];
       updatedItem.name = action.name;
+      updatedItem.date = getCurrentDate();
+      updatedItem.time = getCurrentTime();
       return {
         counter: state.counter,
         todos: updatedTodos,

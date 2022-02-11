@@ -4,8 +4,26 @@ section {
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
   display: flex;
+  flex-direction: column;
+}
+
+section .todoItem {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.todoItem h3 {
+  font-size: 2rem;
+}
+
+.currentDate span {
+  font-size: 1.4rem;
+  color: #444;
+}
+
+.currentDate span:last-child {
+  margin: 0 1rem;
 }
 
 section form {
@@ -47,10 +65,6 @@ section form input {
 
 .btnEdit {
   color: #6b21a8;
-}
-
-section h3 {
-  font-size: 1.8rem;
 }
 
 .complete {

@@ -57,17 +57,23 @@ const TodoItem = ({ item }) => {
 
   return (
     <section className={item.isComplete ? styles.complete : null}>
-      <h3 onClick={setCompleted}>{item.name}</h3>
-      <div className={styles.buttons}>
-        <button onClick={editHandler} className={styles.btnEdit}>
-          <FaEdit size="16px" />
-        </button>
-        <button
-          onClick={() => removeHandler(item.id)}
-          className={styles.btnTrash}
-        >
-          <FaTrash size="16px" />
-        </button>
+       <div className={styles.todoItem}>
+        <h3 onClick={setCompleted}>{item.name}</h3>
+        <div className={styles.buttons}>
+          <button onClick={editHandler} className={styles.btnEdit}>
+            <FaEdit size="16px" />
+          </button>
+          <button
+            onClick={() => removeHandler(item.id)}
+            className={styles.btnTrash}
+          >
+            <FaTrash size="16px" />
+          </button>
+        </div>
+      </div>
+      <div className={styles.currentDate}>
+        <span>{item.date}</span> |
+        <span>{item.time}</span>
       </div>
     </section>
   );
