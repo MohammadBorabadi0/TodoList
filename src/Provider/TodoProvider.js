@@ -26,6 +26,16 @@ const reducer = (state, action) => {
         todos: filteredTodos,
       };
     }
+    case "EDIT": {
+      const updatedTodos = [...state.todos];
+      const index = updatedTodos.findIndex((i) => i.id === action.id);
+      const updatedItem = updatedTodos[index];
+      updatedItem.name = action.name;
+      return {
+        counter: state.counter,
+        todos: updatedTodos,
+      };
+    }
     default: {
       return state;
     }

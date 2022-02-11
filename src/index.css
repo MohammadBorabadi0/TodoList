@@ -22,6 +22,16 @@ html {
   align-items: center;
 }
 
+.form-control {
+  outline: none;
+  border: none;
+  box-shadow: -1px -1px 3px #222, 2px 2px 5px #222;
+  margin-right: 1rem;
+  padding: 0.7rem 0.4rem;
+  width: 100rem;
+  border-radius: 0.5rem;
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 50%;
