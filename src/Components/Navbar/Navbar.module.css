@@ -1,0 +1,13 @@
+.navbar {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.navbar span {
+  background-color: rgb(243, 16, 16);
+  color: #fff;
+  border-radius: 100%;
+  padding: 0.5rem;
+  display: inline-block;
+  margin-right: .5rem;
+}
